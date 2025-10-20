@@ -2,8 +2,7 @@
 import { motion, type Variants } from "framer-motion";
 import { PiMegaphoneDuotone } from "react-icons/pi";
 import { TbCurrencyDollar, TbWorldWww } from "react-icons/tb";
-import { MdAccountBox, MdAccountCircle, MdOutlineDesignServices } from "react-icons/md";
-import { GiSewingMachine } from "react-icons/gi";
+import { MdAccountCircle, MdOutlineDesignServices } from "react-icons/md";
 
 type Course = {
   id: string;
