@@ -1,6 +1,6 @@
 "use client";
 import { motion, type Variants } from "framer-motion";
-import { FaBullseye, FaEye, FaUserTie, FaAward, FaBolt, FaHandsHelping, FaChalkboardTeacher, FaRegBuilding, FaLightbulb, FaRegCheckCircle } from "react-icons/fa";
+import { FaBullseye, FaEye, FaAward, FaBolt, FaHandsHelping, FaLightbulb, FaRegCheckCircle } from "react-icons/fa";
 
 const container: Variants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.12 } } };
 const item: Variants = { hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 120, damping: 18 } } };
@@ -28,7 +28,7 @@ export default function AboutPage() {
           <div className="text-primary text-3xl mb-2"><FaEye /></div>
           <h3 className="text-xl md:text-2xl mt-4 font-bold text-primary">Our Vision</h3>
           <p className="mt-8 text-foreground/90 text-lg leading-relaxed">
-            To become Kerala's leading digital skills academy, transforming thousands of students into
+            To become Keralas leading digital skills academy, transforming thousands of students into
             industry-ready professionals while maintaining 100% employment for graduates.
           </p>
         </motion.article>
@@ -57,6 +57,7 @@ export default function AboutPage() {
           </motion.div>
           <motion.div variants={item} className="card p-6 lg:p-8 bg-white text-slate-900 rounded-xl shadow items-center text-center">
             <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-3">
+              We&apos;ll respond within 24 hours
               <FaHandsHelping className="text-4xl" />
             </div>
             <h3 className="font-bold text-primary">Student-First Approach</h3>

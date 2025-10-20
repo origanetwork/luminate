@@ -1,5 +1,4 @@
 "use client";
-import { FaWhatsapp } from "react-icons/fa";
 import { motion, type Variants } from "framer-motion";
 
 export default function HeroSection() {
