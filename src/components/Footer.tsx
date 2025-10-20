@@ -175,7 +175,7 @@ export default function Footer() {
                   </div>
                 <div className="group-hover:translate-x-1 transition-transform duration-300">
                   <a href="mailto:info@luminateeducation.com" className="block text-white font-medium hover:text-blue-100 transition-colors group-hover:translate-x-0.5">info@luminateeducation.com</a>
-                  <span className="text-blue-100/70 text-sm">We'll respond within 24 hours</span>
+                  <span className="text-blue-100/70 text-sm">We`ll respond within 24 hours</span>
                 </div>
               </div>
               </li>
