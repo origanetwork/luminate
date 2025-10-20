@@ -192,22 +192,18 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-16 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-white/80 text-sm text-center md:text-left">
-              &copy; {currentYear} Luminate Education. All rights reserved.
+          <div className="flex justify-center">
+            <p className="text-white/80 text-sm text-center">
+              &copy; {currentYear} Luminate Education. All rights reserved | Developed by{' '}
+              <a 
+                href="https://www.origanetworks.com/" 
+                className="text-white text-xl hover:text-blue-300 transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Origa Networks
+              </a>
             </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-4 md:mt-0">
-              <Link href="#" className="text-white/80 hover:text-white text-sm font-medium transition-colors hover:underline">Privacy Policy</Link>
-              <span className="text-gray-600">•</span>
-              <Link href="#" className="text-white/80 hover:text-white text-sm font-medium transition-colors hover:underline">Terms of Service</Link>
-              <span className="text-gray-600">•</span>
-              <Link href="#" className="text-white/80 hover:text-white text-sm font-medium transition-colors hover:underline">Sitemap</Link>
-              <span className="text-gray-600">•</span>
-              <Link href="#faq" className="text-white/80 hover:text-white text-sm font-medium transition-colors hover:underline">FAQs</Link>
-            </div>
-          </div>
-          <div className="mt-4 pt-4 border-t border-white/5 text-center text-black-400 text-xs">
-            <p className="text-white/70">Luminate Education is a registered institution under the Education Board. All courses are certified and recognized.</p>
           </div>
         </div>
       </div>
