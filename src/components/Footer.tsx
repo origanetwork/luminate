@@ -43,13 +43,6 @@ export default function Footer() {
               Empowering the next generation with industry-relevant skills through innovative learning solutions.
             </p>
             <div className="flex items-center gap-4 pt-4">
-              <Link 
-                href="/login" 
-                className="px-5 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-medium rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-blue-500/20"
-              >
-                Login
-              </Link>
-              <div className="h-6 w-px bg-white/20"></div>
               {[
                 { 
                   href: "#", 
@@ -155,7 +148,7 @@ export default function Footer() {
                     </svg>
                   </div>
                 <div className="group-hover:translate-x-1 transition-transform duration-300">
-                  <span className="block text-white font-medium group-hover:text-blue-100 transition-colors">2nd Floor, ALI TOWER BUILDING</span>
+                  <span className="block text-white font-medium group-hover:text-blue-100 transition-colors">First Floor, ALI TOWER BUILDING</span>
                   <span className="text-blue-100/70 text-sm">NEAR BUS STAND, MELATTUR</span>
                 </div>
               </div>
@@ -192,12 +185,15 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-16 pt-8">
-          <div className="flex justify-center">
+          <div className="justify-center">
             <p className="text-white/80 text-sm text-center">
-              &copy; {currentYear} Luminate Education. All rights reserved | Developed by{' '}
+              &copy; {currentYear} Luminate Education. All rights reserved 
+            </p>
+            <p className="text-white/80 text-sm text-center">
+              Design & Developed by{' '}
               <a 
                 href="https://www.origanetworks.com/" 
-                className="text-white text-xl hover:text-blue-300 transition-colors duration-200"
+                className="text-white text-sm hover:text-blue-300 transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
               >
