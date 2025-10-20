@@ -1,26 +1,257 @@
 @import "tailwindcss";
 
 :root {
+  /* Default = blue */
+  --background: #0b1220; /* navy */
+  --foreground: #e5efff;
+  --primary: #3b82f6; /* blue-500 */
+  --muted: #8ea2c8;
+  --card: #121a2b;
+}
+
+/* Light theme */
+:root[data-theme="light"] {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a; /* slate-900 */
+  --primary: #0ea5e9; /* sky-500 */
+  --muted: #64748b; /* slate-500 */
+  --card: #f8fafc; /* slate-50 */
+}
+
+/* Blue theme */
+:root[data-theme="blue"] {
+  --background: #0b1220; /* navy */
+  --foreground: #e5efff;
+  --primary: #3b82f6; /* blue-500 */
+  --muted: #8ea2c8;
+  --card: #121a2b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Utilities */
+.container-px { padding-left: 1rem; padding-right: 1rem; }
+@media (min-width: 768px) { .container-px { padding-left: 2rem; padding-right: 2rem; } }
+
+.section { padding-top: 4rem; padding-bottom: 4rem; }
+@media (min-width: 1024px) { .section { padding-top: 6rem; padding-bottom: 6rem; } }
+
+.card { background-color: var(--card); border-radius: 1rem; }
+
+/* Elevated surfaces */
+.surface {
+  background-color: color-mix(in oklab, var(--card) 92%, transparent);
+  border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
+  border-radius: 0.75rem;
+}
+
+.glow {
+  position: relative;
+}
+.glow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 60vw;
+  max-width: 900px;
+  max-height: 900px;
+  background: radial-gradient(ellipse at center, color-mix(in oklab, var(--primary) 30%, transparent) 0%, transparent 60%);
+  filter: blur(60px);
+  opacity: .5;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Hide scrollbars */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom dropdown styling */
+select option {
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+select option:checked {
+  background-color: var(--primary);
+  color: var(--background);
+  border-radius: 8px;
+}
+
+/* Footer theming */
+:root[data-theme="light"] footer {
+  color: var(--foreground);
+}
+
+:root[data-theme="blue"] footer {
+  color: #ffffff;
+}
+
+/* Footer link hovers */
+footer a {
+  text-underline-offset: 3px;
+  transition: color .2s ease, opacity .2s ease, text-decoration-color .2s ease, transform .2s ease;
+}
+footer a:hover {
+  text-decoration: underline;
+  opacity: .9;
+  transform: translateY(-1px);
+}
+
+/* Theme-specific hover colors for footer links */
+:root[data-theme="light"] footer a:hover {
+  color: var(--primary);
+}
+:root[data-theme="blue"] footer a:hover {
+  color: #e6f0ff; /* slightly lighter than white */
+}
+
+/* Premium utilities */
+.transition-base { transition: all .25s ease; }
+
+.hover-elevate { transition: transform .25s ease, box-shadow .25s ease; }
+.hover-elevate:hover { transform: translateY(-2px); box-shadow: 0 10px 24px color-mix(in oklab, var(--primary) 24%, transparent); }
+
+.hover-glow { transition: box-shadow .25s ease; }
+.hover-glow:hover { box-shadow: 0 0 0 2px color-mix(in oklab, var(--primary) 25%, transparent), 0 6px 18px color-mix(in oklab, var(--primary) 30%, transparent); }
+
+.text-gradient {
+  background: linear-gradient(90deg, color-mix(in oklab, var(--primary) 96%, white) 0%, color-mix(in oklab, var(--primary) 70%, white) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Shimmer overlay for subtle premium feel */
+.bg-shimmer { position: relative; overflow: hidden; }
+.bg-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 0%, rgba(255,255,255,.06) 15%, transparent 30%, transparent 70%, rgba(184, 174, 174, 0.06) 85%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmerSlide 6s linear infinite;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+@keyframes shimmerSlide {
+  0% { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes counter {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation Classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s ease-in-out infinite;
+}
+
+.animate-counter {
+  animation: counter 0.6s ease-out forwards;
+}
+
+/* Animation Delays */
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-800 {
+  animation-delay: 800ms;
 }
