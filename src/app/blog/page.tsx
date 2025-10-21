@@ -106,7 +106,7 @@ const blogPosts = [
     readTime: "7 min",
     category: "Advertising",
     image: "/assets/course/d&a.jpg",
-    slug: "social-media-advertising"
+    slug: "social-media-advertising-mastery"
   },
 ];
 
