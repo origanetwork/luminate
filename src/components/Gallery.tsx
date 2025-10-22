@@ -23,8 +23,8 @@ export default function Gallery() {
     () => [
       // Program (Showcasing course materials and certifications)
       { 
-        src: "/assets/gallery/program/pr1.jpeg", 
-        alt: "Accounting Program at Luminate", 
+        src: "/assets/gallery/program/team.jpg", 
+        alt: "Onam Program at Luminate", 
         category: "Program" 
       },
       { 
@@ -33,7 +33,7 @@ export default function Gallery() {
         category: "Program" 
       },
       { 
-        src: "/assets/gallery/program/pr3.jpg", 
+        src: "/assets/gallery/program/pr1.jpeg", 
         alt: "Google Ads Certification Program", 
         category: "Program" 
       },
@@ -82,8 +82,8 @@ export default function Gallery() {
         category: "Event" 
       },
       { 
-        src: "/assets/gallery/class/p1.jpeg", 
-        alt: "Industry Expert Session", 
+        src: "/assets/gallery/program/team.jpg", 
+        alt: "Onam Program At Luminate", 
         category: "Event" 
       },
     ],

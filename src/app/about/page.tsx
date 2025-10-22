@@ -57,7 +57,6 @@ export default function AboutPage() {
           </motion.div>
           <motion.div variants={item} className="card p-6 lg:p-8 bg-white text-slate-900 rounded-xl shadow items-center text-center">
             <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-3">
-              We&apos;ll respond within 24 hours
               <FaHandsHelping className="text-4xl" />
             </div>
             <h3 className="font-bold text-primary">Student-First Approach</h3>

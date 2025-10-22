@@ -26,6 +26,7 @@ export default function CoursePage() {
     "Technical SEO & Audit",
     "Content Strategy",
     "Branding Basics",
+    "CRM"
   ];
 
   const tools = [
@@ -81,7 +82,17 @@ export default function CoursePage() {
                 <FaStar className="text-base md:text-lg" /> Placement Support
               </span>
             </motion.div>
-            <motion.a variants={itemUp} href="#apply" className="inline-block mt-8 rounded-lg bg-primary text-background px-6 py-3 font-semibold shadow-md hover:shadow-lg hover:scale-[1.02] transition-all">
+            <motion.a
+              variants={itemUp}
+              href="#apply"
+              onClick={(e) => {
+                e.preventDefault();
+                if (typeof window !== 'undefined') {
+                  window.dispatchEvent(new Event('open-contact-modal'));
+                }
+              }}
+              className="inline-block mt-8 rounded-lg bg-primary text-background px-6 py-3 font-semibold shadow-md hover:shadow-lg hover:scale-[1.02] transition-all"
+            >
               Enroll Now
             </motion.a>
           </motion.div>
@@ -101,42 +112,23 @@ export default function CoursePage() {
       </motion.div>
 
        {/* Available Batches */}
-      <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} className="mt-20 md:mt-28 px-5 md:px-20 text-center">
-        <motion.h3 variants={itemUp} className="text-2xl md:text-3xl font-bold">Available Batches</motion.h3>
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-          {[ 
-            { title: "Morning Batch", time: "9:00 AM - 12:00 PM" },
-            { title: "Afternoon Batch", time: "1:00 PM - 4:00 PM" },
-            { title: "Weekend Batch", time: "Saturday & Sunday" },
-          ].map(b => (
-            <motion.div key={b.title} variants={itemUp} className="rounded-xl bg-gradient-to-r from-primary to-primary/80 text-white shadow-sm hover:shadow-md p-6">
-              <div className="font-semibold text-lg">{b.title}</div>
-              <div className="mt-2 text-white/90">{b.time}</div>
+        <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} className="mt-16 md:mt-24 px-5 md:px-20 text-center">
+              <motion.h3 variants={itemUp} className="text-2xl md:text-3xl font-bold">Available Batches</motion.h3>
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+                {[ 
+                  { title: "First Batch", time: "8:00 AM - 10:30 AM" },
+                  { title: "Second Batch", time: "10:30 AM - 1:00 PM" },
+                  { title: "Third Batch", time: "1:00 PM - 3:30 PM" },
+                  { title: "Fourth Batch", time: "3:30 PM - 6:00 PM" },
+                ].map(b => (
+                  <motion.div key={b.title} variants={itemUp} className={`rounded-xl bg-gradient-to-r from-primary to-primary/80 text-white shadow-sm hover:shadow-md p-6 ${b.title === "Fourth Batch" ? "md:col-start-2" : ""}`}>
+                    <div className="font-semibold text-lg">{b.title}</div>
+                    <div className="mt-2 text-white/90">{b.time}</div>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
-          ))}
-        </div>
-      </motion.div>
 
-      
-      {/* CTA Band
-      <div className="w-screen ml-[calc(50%-50vw)] mt-16 md:mt-24">
-        <section className="py-12 md:py-16 bg-gradient-to-br from-primary via-primary/90 to-black text-center text-white">
-          <div className="container-px mx-auto">
-            <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
-              <motion.h3 variants={itemUp} className="text-2xl md:text-3xl font-extrabold">Ready to Start Your Digital Marketing Journey?</motion.h3>
-              <motion.p variants={itemUp} className="mt-2 text-white/90">Enroll now and transform your career with 100% placement support</motion.p>
-              <motion.div variants={itemUp} className="mt-8 flex items-center justify-center gap-4">
-                <a href="#apply" className="inline-flex items-center justify-center rounded-lg bg-white text-black px-6 py-3 font-semibold shadow hover:shadow-lg transition">
-                  Enroll Now
-                </a>
-                <a href="/contact" className="inline-flex items-center justify-center rounded-lg border border-white/70 text-white px-6 py-3 font-semibold hover:bg-white/10 transition">
-                  Contact Us
-                </a>
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
-      </div> */}
 
       {/* Modules (Accordion using details/summary) */}
       <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} className="mt-20 md:mt-28 px-5 md:px-20">
