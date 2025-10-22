@@ -8,18 +8,18 @@ const courses = [
   { label: "Diploma in Graphic Design & Video Editing", href: "/courses/diploma-graphic-design-video-editing" },
   { label: "Diploma in Fashion Design & Garment Technology", href: "/courses/diploma-fashion-designing-garment-technology" },
   { label: "Buisness Accounting", href: "/courses/accounting" },
-  { label: "Website Development", href: "/#course-web-dev" },
+  { label: "Website Development", href: "/courses/website-dev" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [coursesOpen, setCoursesOpen] = useState(false);
-  const [theme, setTheme] = useState<string>("blue");
+  const [theme, setTheme] = useState<string>("light");
 
   // Initialize theme from localStorage or system preference
   useEffect(() => {
     const stored = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
-    const preferred = stored === "light" ? "light" : "blue";
+    const preferred = stored === "blue" ? "blue" : "light";
     setTheme(preferred);
     if (typeof document !== "undefined") {
       document.documentElement.setAttribute("data-theme", preferred);
@@ -50,7 +50,7 @@ export default function Navbar() {
               <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <span>info@luminateeducation.com</span>
+              <span>luminate950@gmail.com</span>
             </div>
           </div>
           <div className="text-center sm:text-right">
@@ -60,24 +60,24 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <nav className="container-px mx-auto flex items-center justify-between h-20 relative">
+      <nav className="container-px mx-auto flex items-center justify-between h-24 relative">
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/assets/logo/logo.png"
             alt="Luminate logo"
-            width={48}
-            height={48}
+            width={128}
+            height={128}
             priority
-            className="rounded-sm bg-white p-1 shadow-sm dark:shadow-md dark:shadow-white/10 border border-white/20 hover:shadow-lg hover:shadow-primary/20 transition-all duration-200 w-10 h-10 md:w-12 md:h-12"
+            className="rounded-sm  p-0 hover:shadow-primary/20 transition-all duration-200 w-20 h-20 md:w-24 md:h-24"
           />
         </Link>
         <button
-          className="md:hidden inline-flex items-center justify-center w-12 h-12 -mr-2 p-3 rounded-full hover:bg-white/5 active:bg-white/10 transition-colors"
+          className="md:hidden inline-flex items-center justify-center w-18 h-18 -mr-2 p-4 rounded-full hover:bg-white/5 active:bg-white/10 transition-colors"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
           aria-expanded={open}
         >
-          <span className="i-heroicons-bars-3 text-3xl">
+          <span className="i-heroicons-bars-3 text-5xl">
             {open ? '✕' : '≡'}
           </span>
         </button>
@@ -144,7 +144,16 @@ export default function Navbar() {
             <span className="text-base">{theme === "light" ? "🌙" : "☀️"}</span>
             <span>{theme === "light" ? "Dark" : "Light"}</span>
           </button>
-          <Link href="#cta" className="rounded-full bg-gradient-to-r from-primary to-primary/80 text-background px-6 py-2.5 font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200">
+          <Link
+            href="#cta"
+            onClick={(e) => {
+              e.preventDefault();
+              if (typeof window !== 'undefined') {
+                window.dispatchEvent(new Event('open-contact-modal'));
+              }
+            }}
+            className="rounded-full bg-gradient-to-r from-primary to-primary/80 text-background px-6 py-2.5 font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+          >
             Enquire Now
           </Link>
         </div>
@@ -244,7 +253,21 @@ export default function Navbar() {
                 </button>
               </div>
             </li>
-            <li><Link href="#cta" onClick={() => setOpen(false)} className="inline-block rounded-full bg-primary text-background px-4 py-2 font-medium shadow">Enquire Now</Link></li>
+            <li>
+              <Link
+                href="#cta"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpen(false);
+                  if (typeof window !== 'undefined') {
+                    window.dispatchEvent(new Event('open-contact-modal'));
+                  }
+                }}
+                className="inline-block rounded-full bg-primary text-background px-4 py-2 font-medium shadow"
+              >
+                Enquire Now
+              </Link>
+            </li>
           </ul>
         </div>
       )}

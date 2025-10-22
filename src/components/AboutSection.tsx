@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import Link from "next/link";
+
 export default function AboutSection() {
   return (
     <section id="about" className="section bg-background/50">
@@ -23,12 +25,12 @@ export default function AboutSection() {
                 Our courses are designed to give you the skills and knowledge to succeed in the digital marketing industry.
               </p>
             </div>
-            <button className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-background px-6 py-3 rounded-lg font-medium transition-colors">
+            <Link href="/about" className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-background px-6 py-3 rounded-lg font-medium transition-colors">
               Learn More About Us
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </button>
+            </Link>
           </div>
           <div className="relative animate-fade-in-right">
             <Image 

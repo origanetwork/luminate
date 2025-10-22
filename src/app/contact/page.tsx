@@ -29,7 +29,7 @@ export default function ContactPage() {
                 <FaEnvelope className="text-primary" />
                 <div>
                   <div className="text-sm opacity-80">Email</div>
-                  <div className="font-medium">info@luminateeducation.com</div>
+                  <div className="font-medium">luminate950@gmail.com</div>
                 </div>
               </div>
               <a href="mailto:info@luminateeducation.com" className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary text-background">
@@ -66,7 +66,7 @@ export default function ContactPage() {
                 <div>
                   <div className="text-sm opacity-80">Location</div>
                   <div className="font-medium leading-relaxed">
-                    2nd Floor, Ali Tower Building,<br />
+                    1st Floor, Ali Tower Building,<br />
                     Near Bus Stand, Melattur
                   </div>
                 </div>

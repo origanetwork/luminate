@@ -11,6 +11,18 @@ export default function ContactModal() {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+  
+  useEffect(() => {
+    const handler: EventListener = () => setIsOpen(true);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('open-contact-modal', handler);
+    }
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('open-contact-modal', handler);
+      }
+    };
+  }, []);
 
   if (!isMounted) return null;
 
@@ -88,7 +100,7 @@ export default function ContactModal() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Email Us</p>
-                    <p className="text-sm text-gray-600">info@luminateeducation.com</p>
+                    <p className="text-sm text-gray-600">luminate950@gmail.com</p>
                   </div>
                 </div>
                 <span className="text-purple-600 text-sm font-medium">Email Now</span>

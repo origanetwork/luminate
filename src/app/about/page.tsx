@@ -28,7 +28,7 @@ export default function AboutPage() {
           <div className="text-primary text-3xl mb-2"><FaEye /></div>
           <h3 className="text-xl md:text-2xl mt-4 font-bold text-primary">Our Vision</h3>
           <p className="mt-8 text-foreground/90 text-lg leading-relaxed">
-            To become Kerala`s leading digital skills academy, transforming thousands of students into
+            To become Keralas leading digital skills academy, transforming thousands of students into
             industry-ready professionals while maintaining 100% employment for graduates.
           </p>
         </motion.article>

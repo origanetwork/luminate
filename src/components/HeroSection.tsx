@@ -24,10 +24,10 @@ export default function HeroSection() {
           Learn hands-on with agency-style projects, mentorship, and 100% placement support.
         </motion.h6>
         <motion.div variants={itemUp} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} href="#cta" className="rounded-full bg-primary text-background px-6 py-3 font-medium hover:shadow-xl transition-all duration-300">
+          <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} href="#courses" className="rounded-full bg-primary text-background px-6 py-3 font-medium hover:shadow-xl transition-all duration-300">
             Get Started
           </motion.a>
-          <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} href="#contact" className="rounded-full border border-white/15 px-6 py-3 font-medium hover:bg-white/10 transition-all duration-300">
+          <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} href="/contact" className="rounded-full border border-white/15 px-6 py-3 font-medium hover:bg-white/10 transition-all duration-300">
             Contact Us
           </motion.a>
         </motion.div>
