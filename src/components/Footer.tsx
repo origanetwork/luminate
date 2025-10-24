@@ -43,13 +43,13 @@ export default function Footer() {
               Empowering the next generation with industry-relevant skills through innovative learning solutions.
             </p>
             <div className="flex items-center gap-4 pt-4">
-              <Link 
+              {/* <Link 
                 href="?" 
                 className="px-5 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-medium rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-blue-500/20"
               >
                 Login
               </Link>
-              <div className="h-6 w-px bg-white/20"></div>
+              <div className="h-6 w-px bg-white/20"></div> */}
               {[
                 { 
                   href: "https://www.facebook.com/share/1BoNVkvvQt/", 
