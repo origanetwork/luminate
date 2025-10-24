@@ -1,29 +1,35 @@
 "use client";
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
+import { useEffect, useState } from "react";
 import { FaClock, FaLayerGroup, FaBriefcase } from "react-icons/fa";
 
 const container: Variants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1 } } };
 const itemUp: Variants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 120, damping: 18 } } };
 
 export default function WebDevelopmentCoursePage() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const enableMotion = mounted;
   const modules = [
   "WordPress Basics & Setup",
   "Themes, Customizer & Child Themes",
   "Gutenberg Blocks & Page Builders",
   "Plugins, Forms & Site Management",
   "WooCommerce & Payments",
-  "Performance, Security & SEO"
+  "Performance, Security & SEO",
+  "Social Media Marketing"
  ];
 
   const roles = [
-    "Front-end Developer",
-    "Back-end Developer",
-    "Full Stack Developer",
+    "WordPress SEO / Digital Marketing Specialist",
+    "WordPress Theme Developer / Designer",
+    "WordPress E-Commerce Developer",
+    "WordPress Site Administrator / Manager",
     "Web Application Developer",
-    "Freelance Web Developer",
-    "UI/UX Developer",
-    "Software Engineer"
+    "WordPress Plugin Developer",
+    "WordPress Developer",
+   
   ];
 
   return (
@@ -43,21 +49,27 @@ export default function WebDevelopmentCoursePage() {
             style={{ objectPosition: "center 15%" }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/60" />
-          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} className="relative z-10 max-w-5xl mx-auto px-4">
+          <motion.div
+            variants={container}
+            initial={enableMotion ? "hidden" : false}
+            whileInView={enableMotion ? "visible" : undefined}
+            viewport={enableMotion ? { once: true, amount: 0.5 } : undefined}
+            className="relative z-10 max-w-5xl mx-auto px-4"
+          >
             <motion.div variants={itemUp} className="flex flex-wrap gap-3 md:gap-4 justify-center">
               <span className="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-white/15 backdrop-blur text-white text-xs md:text-sm border border-white/25 shadow-sm">
                 Career in Web Development
               </span>
             </motion.div>
             <motion.h1 variants={itemUp} className="mt-6 text-3xl md:text-5xl font-extrabold tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
-              Diploma in Web Development & Full Stack Engineering
+              Diploma in Web Development 
             </motion.h1>
             <motion.div variants={itemUp} className="mt-6 flex flex-wrap items-center justify-center gap-3 md:gap-5 text-white/90">
               <span className="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-3 rounded-xl bg-white/15 backdrop-blur border border-white/20 text-sm md:text-base">
-                <FaClock className="text-base md:text-lg" /> 5 Months
+                <FaClock className="text-base md:text-lg" /> 3 Months
               </span>
               <span className="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-3 rounded-xl bg-white/15 backdrop-blur border border-white/20 text-sm md:text-base">
-                <FaLayerGroup className="text-base md:text-lg" /> 6 Modules
+                <FaLayerGroup className="text-base md:text-lg" /> 7 Modules
               </span>
             </motion.div>
             <motion.a
@@ -78,7 +90,13 @@ export default function WebDevelopmentCoursePage() {
       </div>
 
       {/* Overview */}
-      <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.4 }} className="mt-12 md:mt-16 px-5 md:px-20 text-center">
+      <motion.div
+        variants={container}
+        initial={enableMotion ? "hidden" : false}
+        whileInView={enableMotion ? "visible" : undefined}
+        viewport={enableMotion ? { once: true, amount: 0.4 } : undefined}
+        className="mt-12 md:mt-16 px-5 md:px-20 text-center"
+      >
         <motion.h2 variants={itemUp} className="text-2xl md:text-3xl font-bold text-center">Course Overview</motion.h2>
         <motion.p variants={itemUp} className="mt-3 text-foreground/90 max-w-4xl text-lg mx-auto leading-relaxed text-center">
           Kickstart your web development career with hands-on training in front-end and back-end technologies. Learn to build responsive websites, web apps, and full-stack projects using modern tools like React, Node.js, and Next.js.
@@ -86,7 +104,13 @@ export default function WebDevelopmentCoursePage() {
       </motion.div>
 
       {/* Available Batches */}
-      <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} className="mt-16 md:mt-24 px-5 md:px-20 text-center">
+      <motion.div
+        variants={container}
+        initial={enableMotion ? "hidden" : false}
+        whileInView={enableMotion ? "visible" : undefined}
+        viewport={enableMotion ? { once: true, amount: 0.3 } : undefined}
+        className="mt-16 md:mt-24 px-5 md:px-20 text-center"
+      >
         <motion.h3 variants={itemUp} className="text-2xl md:text-3xl font-bold">Available Batches</motion.h3>
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {[ 
@@ -104,7 +128,13 @@ export default function WebDevelopmentCoursePage() {
       </motion.div>
 
       {/* Modules */}
-      <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} className="mt-16 md:mt-24 px-5 md:px-20">
+      <motion.div
+        variants={container}
+        initial={enableMotion ? "hidden" : false}
+        whileInView={enableMotion ? "visible" : undefined}
+        viewport={enableMotion ? { once: true, amount: 0.3 } : undefined}
+        className="mt-16 md:mt-24 px-5 md:px-20"
+      >
         <motion.h3 variants={itemUp} className="text-2xl md:text-3xl font-bold text-center">Course Modules</motion.h3>
         <div className="mt-6 max-w-4xl mx-auto">
           {modules.map((m, i) => (
@@ -125,7 +155,12 @@ export default function WebDevelopmentCoursePage() {
       <div className="w-screen ml-[calc(50%-50vw)] mt-16 md:mt-24">
         <section className="py-12 md:py-16 bg-gradient-to-br from-primary via-primary/90 to-black">
           <div className="container-px mx-auto">
-            <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
+            <motion.div
+              variants={container}
+              initial={enableMotion ? "hidden" : false}
+              whileInView={enableMotion ? "visible" : undefined}
+              viewport={enableMotion ? { once: true, amount: 0.3 } : undefined}
+            >
               <motion.h3 variants={itemUp} className="text-2xl md:text-3xl font-bold text-white text-center">Career Opportunities</motion.h3>
               <div className="mt-8 grid md:grid-cols-2 gap-5 max-w-5xl mx-auto px-5 md:px-0">
                 {roles.map((title) => (
@@ -143,7 +178,13 @@ export default function WebDevelopmentCoursePage() {
       </div>
 
       {/* CTA */}
-      <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} className="mt-16 md:mt-24 mb-20 md:mb-28 px-5 md:px-20 text-center">
+      <motion.div
+        variants={container}
+        initial={enableMotion ? "hidden" : false}
+        whileInView={enableMotion ? "visible" : undefined}
+        viewport={enableMotion ? { once: true, amount: 0.3 } : undefined}
+        className="mt-16 md:mt-24 mb-20 md:mb-28 px-5 md:px-20 text-center"
+      >
         <motion.h3 variants={itemUp} className="text-2xl md:text-3xl font-extrabold">Ready to Start Your Web Development Journey?</motion.h3>
         <motion.p variants={itemUp} className="mt-2 text-foreground/80">Enroll now and become a professional web developer.</motion.p>
         <motion.div variants={itemUp} className="mt-8 flex items-center justify-center gap-4">

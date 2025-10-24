@@ -29,7 +29,7 @@ export default function FAQSection() {
         <div className="mt-6 space-y-4">
           {faqs.map((item, idx) => (
             <div key={idx} className="card p-6">
-              <button className="w-full text-left flex items-center justify-between" onClick={() => setOpen(idx === open ? -1 : idx)}>
+              <button suppressHydrationWarning className="w-full text-left flex items-center justify-between" onClick={() => setOpen(idx === open ? -1 : idx)}>
                 <span className="text-lg font-medium">{item.q}</span>
                 <span className="text-2xl text-primary">{open === idx ? "–" : "+"}</span>
               </button>
@@ -40,10 +40,10 @@ export default function FAQSection() {
       </div>
       <form id="contact" className="card p-6 space-y-4">
         <h3 className="text-xl font-semibold">Ask your question</h3>
-        <input className="w-full rounded-md bg-background/40 border border-white/10 px-4 py-3" placeholder="Your name" />
-        <input type="email" className="w-full rounded-md bg-background/40 border border-white/10 px-4 py-3" placeholder="Your email" />
-        <textarea className="w-full rounded-md bg-background/40 border border-white/10 px-4 py-3" rows={4} placeholder="Your question" />
-        <button className="rounded-full bg-primary text-background px-6 py-3 font-medium">Send your message</button>
+        <input suppressHydrationWarning className="w-full rounded-md bg-background/40 border border-white/10 px-4 py-3" placeholder="Your name" />
+        <input suppressHydrationWarning type="email" className="w-full rounded-md bg-background/40 border border-white/10 px-4 py-3" placeholder="Your email" />
+        <textarea suppressHydrationWarning className="w-full rounded-md bg-background/40 border border-white/10 px-4 py-3" rows={4} placeholder="Your question" />
+        <button suppressHydrationWarning className="rounded-full bg-primary text-background px-6 py-3 font-medium">Send your message</button>
       </form>
     </section>
   );

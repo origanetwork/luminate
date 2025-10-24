@@ -1,15 +1,18 @@
 "use client";
 import { LazyMotion, domAnimation, m, useReducedMotion, type Variants } from "framer-motion";
+import { useEffect, useState } from "react";
 import { PiMegaphoneDuotone } from "react-icons/pi";
 import { TbCurrencyDollar, TbWorldWww } from "react-icons/tb";
 import { MdAccountCircle, MdOutlineDesignServices } from "react-icons/md";
+import { type IconType } from "react-icons";
+import Link from "next/link";
 
 type Course = {
   id: string;
   title: string;
   description: string;
   href: string;
-  Icon: React.ComponentType<{ className?: string }>;
+  Icon: IconType;
 };
 
 const courses: Course[] = [
@@ -79,6 +82,9 @@ const item: Variants = {
 
 export default function CoursesSection() {
   const shouldReduceMotion = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const enableMotion = mounted && !shouldReduceMotion;
   return (
     <section id="courses" className="section container-px mx-auto">
       <div className="text-center max-w-3xl mx-auto">
@@ -90,32 +96,28 @@ export default function CoursesSection() {
       </div>
 
       <LazyMotion features={domAnimation} strict>
-        <m.div
-          variants={shouldReduceMotion ? undefined : container}
-          initial={shouldReduceMotion ? undefined : "hidden"}
-          whileInView={shouldReduceMotion ? undefined : "visible"}
-          viewport={shouldReduceMotion ? undefined : { once: true, amount: 0.3 }}
-          className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {courses.map(({ id, title, description, href, Icon }) => (
+        <m.div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {courses.map(({ id, title, description, href, Icon }, idx) => (
             <m.article
-              variants={shouldReduceMotion ? undefined : item}
               key={id}
               id={id}
               className="card p-8 lg:p-10 surface shadow-lg hover:shadow-xl transition-all duration-300 group hover-elevate"
-              whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+              initial={enableMotion ? { opacity: 0, y: 16 } : undefined}
+              animate={enableMotion ? { opacity: 1, y: 0 } : undefined}
+              transition={enableMotion ? { type: "tween", duration: 0.3, delay: idx * 0.06 } : undefined}
+              whileHover={enableMotion ? { y: -4 } : undefined}
             >
               <div className="w-12 h-12 rounded-full bg-primary/15 text-primary grid place-content-center group-hover:scale-105 transition-transform">
                 <Icon className="text-2xl" />
               </div>
               <h3 className="mt-5 text-2xl font-semibold leading-snug">{title}</h3>
               <p className="mt-3 text-lg md:text-xl leading-relaxed text-foreground/90">{description}</p>
-              <a
+              <Link
                 href={href}
                 className="mt-6 inline-block rounded-full bg-gradient-to-r from-primary to-primary/80 text-background px-5 py-2 font-medium shadow hover:shadow-xl transition-all duration-300"
               >
                 Learn More
-              </a>
+              </Link>
             </m.article>
           ))}
         </m.div>

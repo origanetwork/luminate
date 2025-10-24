@@ -20,9 +20,12 @@ export const metadata: Metadata = {
   title: "Luminate Education Institution",
   description: "Premium digital marketing education in Kerala",
   icons: {
-    icon: "/assets/logo/logo.png",
-    shortcut: "/assets/logo/logo.png",
-    apple: "/assets/logo/logo.png",
+    icon: [
+      { url: "/favicon.ico?v=2" },
+      { url: "/assets/logo/logo.png?v=2", type: "image/png", sizes: "32x32" },
+    ],
+    shortcut: "/favicon.ico?v=2",
+    apple: "/assets/logo/logo.png?v=2",
   },
 };
 
@@ -32,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" data-theme="light" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >

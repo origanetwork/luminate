@@ -72,6 +72,7 @@ export default function Navbar() {
           />
         </Link>
         <button
+          suppressHydrationWarning
           className="md:hidden inline-flex items-center justify-center w-18 h-18 -mr-2 p-4 rounded-full hover:bg-white/5 active:bg-white/10 transition-colors"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
@@ -96,6 +97,7 @@ export default function Navbar() {
           </Link></li> */}
           <li className="relative">
             <button
+              suppressHydrationWarning
               className="hover:text-primary inline-flex items-center gap-1 transition-colors duration-200 relative group font-medium"
               onClick={() => setCoursesOpen((v) => !v)}
               aria-expanded={coursesOpen}
@@ -137,6 +139,7 @@ export default function Navbar() {
         </ul>
         <div className="hidden md:flex items-center gap-4">
           <button
+            suppressHydrationWarning
             aria-label="Toggle theme"
             onClick={() => handleThemeChange(theme === "light" ? "blue" : "light")}
             className="inline-flex items-center gap-2 rounded-xl bg-background/80 border border-primary/20 text-foreground px-4 py-2.5 text-sm font-medium hover:bg-background/90 hover:border-primary/40 transition-all duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
@@ -181,6 +184,7 @@ export default function Navbar() {
             </li>
             <li>
               <button 
+                suppressHydrationWarning
                 className="w-full text-left py-3 text-lg font-medium hover:text-primary transition-colors flex justify-between items-center" 
                 onClick={() => setCoursesOpen((v) => !v)}
               >
@@ -244,6 +248,7 @@ export default function Navbar() {
               <div className="flex items-center gap-3">
                 <label className="text-sm font-medium opacity-80">Theme</label>
                 <button
+                  suppressHydrationWarning
                   aria-label="Toggle theme"
                   onClick={() => handleThemeChange(theme === "light" ? "blue" : "light")}
                   className="inline-flex items-center gap-2 bg-background/80 border border-primary/20 text-foreground rounded-xl px-3 py-2 text-sm font-medium hover:bg-background/90 hover:border-primary/40 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/30"
