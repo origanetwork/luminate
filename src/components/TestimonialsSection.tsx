@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { AiFillStar } from "react-icons/ai";
 
 type Testimonial = {
   id: string;
@@ -12,48 +13,89 @@ type Testimonial = {
 const TESTIMONIALS: Testimonial[] = [
   {
     id: "t1",
-    name: "Mohammed Shafeeque C",
+    name: "Jesma",
     message:
-      "Practical learning at its best. The hands-on training and live project exposure boosted my confidence a lot. The campus vibe is positive and supportive. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ipsum.",
-    avatarSrc: "/assets/testimontal/OIP.jpg",
+      "Practical learning at its best. The hands-on training and live project exposure boosted my confidence a lot. The campus vibe is positive and supportive. I learned to work with real clients and gained skills that I now use in my daily work.",
+    avatarSrc: "/assets/testimontal/t1.jpeg",
   },
   {
     id: "t2",
-    name: "Najiya",
+    name: "Nashim",
     message:
-      "The program gave me the exact skills I needed to stand out in digital marketing and secure a great position. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ipsum.",
-    avatarSrc: "/assets/testimontal/T1.jpg",
+      "The program gave me the exact skills I needed to stand out in digital marketing and secure a great position. The trainers were always ready to guide and clarify doubts. I now feel much more confident managing campaigns and analyzing results independently.",
+    avatarSrc: "/assets/testimontal/t2.jpeg",
   },
   {
     id: "t3",
     name: "Rahul K",
     message:
-      "Structured curriculum, caring mentors, and real-world assignments. I highly recommend Luminate to anyone serious about their career. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ipsum.",
-    avatarSrc: "/assets/testimontal/T2.jpg",
+      "Structured curriculum, caring mentors, and real-world assignments made learning enjoyable. Every module built perfectly on the previous one. I highly recommend Luminate to anyone serious about career growth and wanting to learn by doing.",
+    avatarSrc: "/assets/testimontal/t3.jpeg",
   },
   {
     id: "t4",
-    name: "Ayesha M",
+    name: "Mubarak",
     message:
-      "From zero to confident! The projects and guidance made complex topics simple and practical. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ipsum.",
-    avatarSrc: "/assets/testimontal/T3.jpg",
+      "From zero to confident! The projects and guidance made complex topics simple and practical. I loved how the mentors encouraged creativity and teamwork. This course truly transformed how I approach problem-solving and professional growth.",
+    avatarSrc: "/assets/testimontal/t4.jpeg",
   },
   {
     id: "t5",
-    name: "Suhail P",
+    name: "Basil Zaman",
     message:
-      "Excellent mentor support and peer community. Weekly reviews kept me accountable and improving every module. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ipsum.",
-    avatarSrc: "/assets/testimontal/T4.webp",
+      "Excellent mentor support and a great peer community. Weekly reviews kept me accountable and helped me improve every module. The collaborative learning environment pushed me to challenge myself and stay consistent throughout the course.",
+    avatarSrc: "/assets/testimontal/t5.jpeg",
   },
   {
     id: "t6",
-    name: "Nimisha V",
+    name: "Nasim",
     message:
-      "I landed interviews within weeks of finishing. Portfolio-focused tasks made a big difference. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ipsum.",
-    avatarSrc: "/assets/testimontal/OIP.jpg",
+      "I landed interviews within weeks of finishing. The portfolio-focused tasks helped me showcase real skills to employers. The program didn’t just teach me concepts — it taught me how to apply them effectively in real-world scenarios.",
+    avatarSrc: "/assets/testimontal/t6.jpeg",
+  },
+  {
+    id: "t7",
+    name: "Rana",
+    message:
+      "A well-structured program that focuses on real-world outcomes. The personalized feedback and projects made all the difference. I especially loved how the mentors encouraged us to think strategically rather than just follow instructions.",
+    avatarSrc: "/assets/testimontal/t7.jpeg",
+  },
+  {
+    id: "t8",
+    name: "Shamil",
+    message:
+      "I really appreciated the practical approach. Every session had something valuable I could immediately apply in my work. The mix of theory and hands-on practice gave me clarity and confidence in handling client projects effectively.",
+    avatarSrc: "/assets/testimontal/t8.jpeg",
+  },
+  {
+    id: "t9",
+    name: "Ashik",
+    message:
+      "Supportive mentors and engaging sessions throughout. The projects helped me gain the confidence to start my professional journey. The program made me realize my potential and taught me how to turn ideas into actionable results.",
+    avatarSrc: "/assets/testimontal/t9.jpeg",
+  },
+  {
+    id: "t10",
+    name: "Ajnas",
+    message:
+      "Supportive mentors and well-structured sessions made learning enjoyable. The practical projects helped me build confidence and understand how to apply concepts in real scenarios. I truly discovered my strengths during this program.",
+    avatarSrc: "/assets/testimontal/Ajnas.jpeg",
+  },
+  {
+    id: "t11",
+    name: "Fidha",
+    message:
+      "The mentors were approachable and always available to guide us. Working on real projects gave me hands-on experience and boosted my confidence to take on professional challenges. I’m proud of how far I’ve come through this journey.",
+    avatarSrc: "/assets/testimontal/Fidha.jpeg",
+  },
+  {
+    id: "t12",
+    name: "Ranees",
+    message:
+      "This program helped me turn my interest into real skills. The mentors motivated me at every step, and the collaborative environment made learning fun and effective. It gave me the clarity and confidence to start my career strong.",
+    avatarSrc: "/assets/testimontal/ranees.jpeg",
   },
 ];
-
 
 
 export default function TestimonialsSection() {
@@ -103,18 +145,25 @@ export default function TestimonialsSection() {
                     i === index ? "scale-100 opacity-100" : "scale-95 opacity-80"
                   }`}
                 >
-                  <div className="flex items-center gap-3 md:gap-4">
-                    {t.avatarSrc ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={t.avatarSrc} alt={t.name} className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover" />
-                    ) : (
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/15 text-primary grid place-content-center font-semibold">
-                        {t.name.slice(0,1)}
+                  <div className="flex items-start justify-between gap-3 md:gap-4">
+                    <div className="flex items-center gap-3 md:gap-4">
+                      {t.avatarSrc ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={t.avatarSrc} alt={t.name} className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover" />
+                      ) : (
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/15 text-primary grid place-content-center font-semibold">
+                          {t.name.slice(0,1)}
+                        </div>
+                      )}
+                      <div>
+                        <div className="font-semibold">{t.name}</div>
+                        {t.role && <div className="text-sm text-foreground/70">{t.role}</div>}
                       </div>
-                    )}
-                    <div>
-                      <div className="font-semibold">{t.name}</div>
-                      {t.role && <div className="text-sm text-foreground/70">{t.role}</div>}
+                    </div>
+                    <div className="flex items-center gap-1 text-yellow-400 shrink-0">
+                      {Array.from({ length: 5 }).map((_, idx) => (
+                        <AiFillStar key={idx} className="w-4 h-4 md:w-5 md:h-5" />
+                      ))}
                     </div>
                   </div>
                   <div className="mt-4 text-lg md:text-xl leading-relaxed text-foreground/90">
@@ -129,6 +178,7 @@ export default function TestimonialsSection() {
         <div className="mt-6 flex items-center justify-center gap-2">
           {slides.map((_, i) => (
             <button
+              suppressHydrationWarning
               key={i}
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => setIndex(i)}
