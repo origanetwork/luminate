@@ -18,16 +18,16 @@ const TESTIMONIALS: Testimonial[] = [
       "Practical learning at its best. The hands-on training and live project exposure boosted my confidence a lot. The campus vibe is positive and supportive. I learned to work with real clients and gained skills that I now use in my daily work.",
     avatarSrc: "/assets/testimontal/t1.jpeg",
   },
-  {
-    id: "t2",
-    name: "Nashim",
-    message:
-      "The program gave me the exact skills I needed to stand out in digital marketing and secure a great position. The trainers were always ready to guide and clarify doubts. I now feel much more confident managing campaigns and analyzing results independently.",
-    avatarSrc: "/assets/testimontal/t2.jpeg",
-  },
+  // {
+  //   id: "t2",
+  //   name: "Fathima",
+  //   message:
+  //     "The program gave me the exact skills I needed to stand out in digital marketing and secure a great position. The trainers were always ready to guide and clarify doubts. I now feel much more confident managing campaigns and analyzing results independently.",
+  //   avatarSrc: "/assets/testimontal/t2.jpeg",
+  // },
   {
     id: "t3",
-    name: "Rahul K",
+    name: "Ramees",
     message:
       "Structured curriculum, caring mentors, and real-world assignments made learning enjoyable. Every module built perfectly on the previous one. I highly recommend Luminate to anyone serious about career growth and wanting to learn by doing.",
     avatarSrc: "/assets/testimontal/t3.jpeg",
@@ -88,13 +88,7 @@ const TESTIMONIALS: Testimonial[] = [
       "The mentors were approachable and always available to guide us. Working on real projects gave me hands-on experience and boosted my confidence to take on professional challenges. I’m proud of how far I’ve come through this journey.",
     avatarSrc: "/assets/testimontal/Fidha.jpeg",
   },
-  {
-    id: "t12",
-    name: "Ranees",
-    message:
-      "This program helped me turn my interest into real skills. The mentors motivated me at every step, and the collaborative environment made learning fun and effective. It gave me the clarity and confidence to start my career strong.",
-    avatarSrc: "/assets/testimontal/ranees.jpeg",
-  },
+ 
 ];
 
 
