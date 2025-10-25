@@ -19,13 +19,36 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Luminate Education Institution",
   description: "Premium digital marketing education in Kerala",
+  metadataBase: new URL('https://lumiantecampus.com'),
   icons: {
     icon: [
-      { url: "/favicon.ico?v=2" },
-      { url: "/assets/logo/logo.png?v=2", type: "image/png", sizes: "32x32" },
+      { url: "/icon.png", type: "image/png", sizes: "any" },
+      { url: "/assets/logo/logo.png", type: "image/png", sizes: "512x512" },
     ],
-    shortcut: "/favicon.ico?v=2",
-    apple: "/assets/logo/logo.png?v=2",
+    apple: [
+      { url: "/apple-icon.png", type: "image/png" },
+    ],
+  },
+  openGraph: {
+    title: "Luminate Education Institution",
+    description: "Premium digital marketing education in Kerala",
+    url: "https://lumiantecampus.com",
+    siteName: "Luminate Education Campus",
+    images: [
+      {
+        url: "/assets/logo/logo.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Luminate Education Institution",
+    description: "Premium digital marketing education in Kerala",
+    images: ["/assets/logo/logo.png"],
   },
 };
 
