@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Luminate Education Institution",
   description: "Premium digital marketing education in Kerala",
-  metadataBase: new URL('https://lumiantecampus.com'),
+  metadataBase: new URL('https://luminatecampus.com'),
   icons: {
     icon: [
       { url: "/icon.png", type: "image/png", sizes: "any" },
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Luminate Education Institution",
     description: "Premium digital marketing education in Kerala",
-    url: "https://lumiantecampus.com",
+    url: "https://luminatecampus.com",
     siteName: "Luminate Education Campus",
     images: [
       {
-        url: "/assets/logo/logo.png",
+        url: "/assets/logo/logo.pngac",
         width: 1200,
         height: 630,
       },
