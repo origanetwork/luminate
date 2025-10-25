@@ -17,20 +17,35 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://luminatecampus.com'), // Replace with your actual domain
   title: "Luminate Education Institution",
   description: "Premium digital marketing education in Kerala",
   icons: {
     icon: [
-      { url: "/favicon_ddot/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon_ddot/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon.ico" },
     ],
-    shortcut: [
-      "favicon.ico",
-    ],
+    shortcut: ["/favicon.ico"],
     apple: [
-      { url: "/favicon_ddot/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/icon.png", sizes: "180x180", type: "image/png" },
     ],
+  },
+  openGraph: {
+    title: "Luminate Education Institution",
+    description: "Premium digital marketing education in Kerala",
+    url: 'https://luminatecampus.com', 
+    siteName: "Luminate Education Institution",
+    images: [
+      {
+        url: '/icon.png', 
+        width: 512,
+        height: 512,
+        alt: 'Luminate Education Institution',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
   manifest: "/site.webmanifest",
 };
