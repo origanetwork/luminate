@@ -19,37 +19,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Luminate Education Institution",
   description: "Premium digital marketing education in Kerala",
-  metadataBase: new URL('https://luminatecampus.com'),
   icons: {
     icon: [
-      { url: "/icon.png", type: "image/png", sizes: "any" },
-      { url: "/assets/logo/logo.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon_ddot/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon_ddot/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: [
+      "favicon.ico",
     ],
     apple: [
-      { url: "/apple-icon.png", type: "image/png" },
+      { url: "/favicon_ddot/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
-  openGraph: {
-    title: "Luminate Education Institution",
-    description: "Premium digital marketing education in Kerala",
-    url: "https://luminatecampus.com",
-    siteName: "Luminate Education Campus",
-    images: [
-      {
-        url: "/assets/logo/logo.pngac",
-        width: 1200,
-        height: 630,
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Luminate Education Institution",
-    description: "Premium digital marketing education in Kerala",
-    images: ["/assets/logo/logo.png"],
-  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
